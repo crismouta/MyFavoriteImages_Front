@@ -1,13 +1,19 @@
 .card-test {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     margin: 2%;
+    padding: 2%;
     display: flex;
     flex-direction: column;
+    max-width: 100%;
+    max-height: 100%;
 }
 
 .image-container{
-    width: 70%;
-    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
 }
 
 .image {
