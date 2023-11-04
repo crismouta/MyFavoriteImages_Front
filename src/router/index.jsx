@@ -2,8 +2,7 @@ import { createBrowserRouter } from 'react-router-dom';
 import MyImage from "../pages/MyImage";
 import Layout from '../layout/Layout';
 import MyImageById from '../pages/MyImageById';
-import AddNewImage from '../pages/AddNewImage';
-import UpdateImage from '../pages/UpdateImage';
+import AddOrUpdateImage from '../pages/AddOrUpdateImage';
 
 export const router = createBrowserRouter([
     {
@@ -21,12 +20,12 @@ export const router = createBrowserRouter([
 
             {
                 path: "/create-image",
-                element: <AddNewImage />
+                element: <AddOrUpdateImage />
             },
 
             {
                 path: "/edit-image/:id",
-                element: <UpdateImage />
+                element: <AddOrUpdateImage />
             }
         ]
     }
