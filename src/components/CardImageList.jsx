@@ -2,10 +2,11 @@ import { Link } from "react-router-dom"
 import PropTypes from 'prop-types'
 import './cardImageList.css'
 
-const CardImageList = ({ image }) => {
+const CardImageList = ({ image, deleteMyImage }) => {
 
     CardImageList.propTypes = {
-        image: PropTypes.object
+        image: PropTypes.object,
+        deleteMyImage: PropTypes.func
     }
 
     return (
@@ -19,6 +20,7 @@ const CardImageList = ({ image }) => {
             </div>
             <div className='text-container'>
                 <Link to={`/edit-image/${image.id}`} className='btn btn-outline-secondary m-2'>Update Image</Link>
+                <button className='btn btn-outline-danger m-2' onClick={() => deleteMyImage(image.id)}>Delete</button>
             </div>
         </div>
     )

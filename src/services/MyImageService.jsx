@@ -32,5 +32,9 @@ class MyImageService {
         return axios.put(MY_IMAGE_BASE_REST_API_URL + '/update/' + id, formData)
     }
 
+    deleteImage(id) {
+        return axios.delete(MY_IMAGE_BASE_REST_API_URL + '/' + id)
+    }
+
 }
 export default new MyImageService();

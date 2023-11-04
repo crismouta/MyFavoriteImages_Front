@@ -19,6 +19,13 @@ const MyImage = () => {
             console.log(error)
         })
     }
+    const deleteMyImage = (id) => {
+        MyImageService.deleteImage(id).then(() => {
+            updateMyImagesList();
+        }).catch(error => {
+            console.log(error)
+        })
+    }
 
     return (
         <div className='myImages'>
@@ -28,7 +35,7 @@ const MyImage = () => {
             <div className='cards-container'>
                 {
                     myImages.map((myImage) =>
-                        <CardImageList key={myImage.id} image={myImage} />
+                        <CardImageList key={myImage.id} image={myImage} deleteMyImage={deleteMyImage} />
                     )
                 }
             </div>
