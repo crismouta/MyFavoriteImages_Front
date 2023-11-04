@@ -1,6 +1,7 @@
 import { createBrowserRouter } from 'react-router-dom';
 import MyImage from "../pages/MyImage";
 import Layout from '../layout/Layout';
+import MyImageById from '../pages/MyImageById';
 
 export const router = createBrowserRouter([
     {
@@ -12,8 +13,8 @@ export const router = createBrowserRouter([
                 element: <MyImage />
             },
             {
-                path: "/project/:id",
-                element: <MyImage />
+                path: "/image/:id",
+                element: <MyImageById />
             },
         ]
     }
