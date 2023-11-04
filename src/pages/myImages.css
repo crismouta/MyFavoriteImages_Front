@@ -14,27 +14,3 @@ body {
     justify-content: center;
     flex-wrap: wrap;
 }
-
-.card-test {
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    margin: 2%;
-    display: flex;
-    flex-direction: column;
-}
-
-.image-container{
-    width: 70%;
-    height: 70%;
-}
-
-.image {
-    padding: 5%;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-
-.text-container{
-    padding: 5%;
-}
