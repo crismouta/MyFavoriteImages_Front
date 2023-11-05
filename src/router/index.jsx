@@ -3,6 +3,8 @@ import MyImage from "../pages/MyImage";
 import Layout from '../layout/Layout';
 import MyImageById from '../pages/MyImageById';
 import AddOrUpdateImage from '../pages/AddOrUpdateImage';
+import Home from '../pages/Home';
+import DeleteImage from '../pages/DeleteImage';
 
 export const router = createBrowserRouter([
     {
@@ -11,6 +13,10 @@ export const router = createBrowserRouter([
         children: [
             {
                 path: "/",
+                element: <Home />
+            },
+            {
+                path: "/images",
                 element: <MyImage />
             },
             {
@@ -26,6 +32,10 @@ export const router = createBrowserRouter([
             {
                 path: "/edit-image/:id",
                 element: <AddOrUpdateImage />
+            },
+            {
+                path: "/delete/:id",
+                element: <DeleteImage />
             }
         ]
     }

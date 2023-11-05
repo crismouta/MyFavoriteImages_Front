@@ -3,6 +3,7 @@ import MyImageService from '../services/MyImageService.jsx'
 import './myImages.css'
 import CardImageList from "../components/CardImageList.jsx";
 import { Link } from "react-router-dom";
+import plusIcon from '/plus.svg'
 
 const MyImage = () => {
 
@@ -19,23 +20,19 @@ const MyImage = () => {
             console.log(error)
         })
     }
-    const deleteMyImage = (id) => {
-        MyImageService.deleteImage(id).then(() => {
-            updateMyImagesList();
-        }).catch(error => {
-            console.log(error)
-        })
-    }
 
     return (
         <div className='myImages'>
             <div className="">
-                <Link to='/create-image' className='btn btn-light'>Add New Image</Link>
+                <Link to='/create-image' className="link-add-new-image">
+                    <img className="add-new-image" src={plusIcon} alt="" />
+                    <span className="add-new-image">Add New Image</span>
+                </Link>
             </div>
             <div className='cards-container'>
                 {
                     myImages.map((myImage) =>
-                        <CardImageList key={myImage.id} image={myImage} deleteMyImage={deleteMyImage} />
+                        <CardImageList key={myImage.id} image={myImage} />
                     )
                 }
             </div>

@@ -1,12 +1,13 @@
 import { Link } from "react-router-dom"
 import PropTypes from 'prop-types'
 import './cardImageList.css'
+import deleteIcon from '/delete.svg'
+import editIcon from '/edit.svg'
 
-const CardImageList = ({ image, deleteMyImage }) => {
+const CardImageList = ({ image }) => {
 
     CardImageList.propTypes = {
         image: PropTypes.object,
-        deleteMyImage: PropTypes.func
     }
 
     return (
@@ -15,12 +16,16 @@ const CardImageList = ({ image, deleteMyImage }) => {
                 <Link to={`/image/${image.id}`}><img src={image.image} className="image" alt={image.title} title={image.title} /></Link>
             </div>
             <div className="text-container">
-                <Link to={`/image/${image.id}`}><h5 className="card-title">Title: {image.title}</h5></Link>
+                <Link to={`/image/${image.id}`} className="image-title"><h4>{image.title}</h4></Link>
                 <p className="card-text description-text">{image.description}</p>
             </div>
-            <div className='text-container'>
-                <Link to={`/edit-image/${image.id}`} className='btn btn-outline-secondary m-2'>Update Image</Link>
-                <button className='btn btn-outline-danger m-2' onClick={() => deleteMyImage(image.id)}>Delete</button>
+            <div className='text-container icons-container'>
+                <Link to={`/edit-image/${image.id}`} className="icons">
+                    <img src={editIcon} alt="update" />
+                </Link>
+                <Link to={`/delete/${image.id}`} className="icons">
+                    <img src={deleteIcon} alt="update" />
+                </Link>
             </div>
         </div>
     )

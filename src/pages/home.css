@@ -1,0 +1,28 @@
+.home-background{
+    background-image: url('/background-bw-opacity.png');
+    background-repeat: no-repeat;
+    width: 90vw;
+    height: 90vh;
+    object-fit: cover;
+}
+.home-title-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+
+.link-title{
+    text-decoration: none;
+    color: black;
+}
+
+.home-title{
+    text-align: center;
+    font-size: 80px;
+    font-family: 'Agbalumo';
+}
+
+.home-title:hover{
+    transform: scale(1.3);
+}

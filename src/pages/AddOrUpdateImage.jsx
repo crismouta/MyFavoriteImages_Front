@@ -17,7 +17,7 @@ const AddOrUpdateImage = () => {
             e.preventDefault();
             MyImageService.updateMyImage(id, title, description, image).then((response) => {
                 console.log(response.data)
-                navigate('/')
+                navigate('/images')
             }).catch(error => {
                 console.log(error)
             })
@@ -25,7 +25,7 @@ const AddOrUpdateImage = () => {
         } else {
             MyImageService.createImage(title, description, image).then((response) => {
                 console.log(response.data)
-                navigate('/')
+                navigate('/images')
             }).catch(error => {
                 console.log(error)
             })
@@ -70,6 +70,7 @@ const AddOrUpdateImage = () => {
                         className="form-control"
                         defaultValue={image}
                         onChange={handleImageChange}
+                        required
                     />
                 </div>
                 <div className="form-group mb-2">
@@ -81,6 +82,7 @@ const AddOrUpdateImage = () => {
                         className="form-control"
                         value={title}
                         onChange={(e) => setTitle(e.target.value)}
+                        required
                     />
                 </div>
                 <div className="form-group mb-2">
@@ -92,11 +94,12 @@ const AddOrUpdateImage = () => {
                         className="form-control"
                         value={description}
                         onChange={(e) => setDescription(e.target.value)}
+                        required
                     />
                 </div>
                 <div className="d-flex">
                     <button className="btn btn-outline-success m-2" onClick={(e) => saveOrUpdateImage(e)}>Save</button>
-                    <Link to='/' className="btn btn-outline-danger m-2">Cancel</Link>
+                    <Link to='/images' className="btn btn-outline-danger m-2">Cancel</Link>
                 </div>
             </form>
         </div>
